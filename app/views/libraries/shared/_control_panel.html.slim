@@ -8,7 +8,7 @@
         = t('common.actions.collect')
   .libraries.JS-active-toggle--target#libraries_popup
     = t('library.control.add')
-    span.sprite_helper*{ title: t('library.control.main_tooltip') }
+    = render '/shared/tooltip', text: t('library.control.main_tooltip')
 
     -# Create two separate collections for public and private libraries
     - libraries_public = libraries.select { |lib| lib.public? }

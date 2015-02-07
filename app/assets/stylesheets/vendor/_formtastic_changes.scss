@@ -116,15 +116,13 @@ input[type='number'] {
   margin-bottom: 0;
 }
 
-span.sprite_helper {
-   display:inline-block;
-}
-
-.formtastic span.sprite_helper {
+.formtastic .Tooltip {
+   display: inline-block;
    position: absolute;
    top: 0.5em;
    right:0.1em;
    z-index: 100;
+   font-size: 1.5rem;
 }
 
 // TinyMce Fix {
@@ -136,5 +134,3 @@ span.sprite_helper {
 .formtastic .input .inline-hints {
   margin: 0.5em 0 0 0;
 }
-
-

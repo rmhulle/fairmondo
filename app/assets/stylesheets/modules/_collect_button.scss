@@ -12,12 +12,14 @@
   }
 }
 
-// Fragezeichen-Button
-#libraries_popup > span.sprite_helper {
+// tooltip
+#libraries_popup > .Tooltip {
   position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+  top: 0.2em;
+  right: 0.2em;
+  font-size: 1.5rem;
 }
+
 
 #libraries_popup > #libraries_list {
   margin-top: 0.5em;

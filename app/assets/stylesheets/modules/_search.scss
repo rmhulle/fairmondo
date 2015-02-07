@@ -18,13 +18,13 @@ cannot be in controller specific code because it is used by multiple controllers
 
 .Search-heading > .Search-arrow {
   float: right;
-  &.sprite_down_arrow {
+  &.fa-chevron-down {
     display: inline-block;
     &.is-active {
       display: none;
     }
   }
-  &.sprite_up_arrow {
+  &.fa-chevron-up {
     display:none;
     &.is-active {
       display: inline-block;

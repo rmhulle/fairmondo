@@ -20,15 +20,4 @@
 / along with Fairmondo.  If not, see <http://www.gnu.org/licenses/>.
 /
 
-- if resource.is_conventional? && resource.show_fair_alternative_for_seller?
-  .fair_alternative
-    - alternative = FairAlternative.find_for resource
-    h3
-      = t('article.show.alternative')
-      = render '/shared/tooltip',
-        text: 'Hier kannst Du eine faire Alternative zu Deinem gewünschten Artikel sehen.'
-    - if alternative.present?
-      = render '/articles/shared/show_article', article: alternative
-    - else
-      p
-        = t('article.show.no_alternative')
+i.Tooltip.fa.fa-question-circle title=text

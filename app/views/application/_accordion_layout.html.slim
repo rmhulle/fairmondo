@@ -26,6 +26,6 @@
     span.content
       = accordion_title
     - if accordion_tooltip
-      span.sprite_helper title=accordion_tooltip
+      = render '/shared/tooltip', text: accordion_tooltip
   div class="Accordion-content #{accordion_content_class}"
     = yield

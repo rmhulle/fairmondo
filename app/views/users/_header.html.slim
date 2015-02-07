@@ -4,7 +4,7 @@
     - if user_resource.is? current_user
       .user-edit
         a href="#{ edit_user_registration_path }"
-          span.sprite_pencil
+          => fa_icon 'pencil'
           = t 'common.actions.edit_profile'
   .user-middle
     - if user_resource.about_me && !user_resource.about_me.empty?
@@ -19,7 +19,7 @@
     .user-menu
       - if user_resource.is? current_user
         a.Button href="#{ user_path(current_user) }"
-          span= fa_icon 'cubes', class: 'fa-lg fa-fw'
+          span= fa_icon 'cube', class: 'fa-lg fa-fw'
           = t 'common.text.my_articles'
       a.Button href="#{ user_libraries_path(user_resource) }"
         span= fa_icon 'cubes', class: 'fa-lg fa-fw'

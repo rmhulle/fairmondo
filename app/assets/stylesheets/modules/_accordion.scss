@@ -75,10 +75,8 @@ Styleguide Accordion
 	margin-bottom: 0;
 }
 
-.Accordion .Accordion-item > .Accordion-header > .sprite_helper {
+.Accordion .Accordion-item > .Accordion-header > .Tooltip {
   position:static;
   float:right;
+  font-size: 1.5rem;
 }
-
-
-

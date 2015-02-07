@@ -28,7 +28,8 @@
     - if policy(resource).deactivate?
       = link_to t('article.labels.edit_or_delete') , article_path(deactivate: true), confirm: t('article.deactivate_confirm') , class: "Button", method: :put
       = button_to t('article.labels.deactivate') , article_path(deactivate: true), class: "Button", method: :put
-      span.sprite_helper title="Wenn Du Deinen Artikel vom Marktplatz nimmst, ist dieser nicht mehr aktiv und kann nicht mehr gefunden und gekauft werden. Du musst den Artikel vom Marktplatz nehmen, wenn Du ihn bearbeiten oder löschen willst. Du findest die nicht aktiven Artikel in Deinem Profil unter Nicht eingestellte Artikel."
+      = render '/shared/tooltip',
+        text: 'Wenn Du Deinen Artikel vom Marktplatz nimmst, ist dieser nicht mehr aktiv und kann nicht mehr gefunden und gekauft werden. Du musst den Artikel vom Marktplatz nehmen, wenn Du ihn bearbeiten oder löschen willst. Du findest die nicht aktiven Artikel in Deinem Profil unter Nicht eingestellte Artikel.'
     - if policy(resource).destroy?
       = button_to t('common.actions.destroy'),  article_path(resource) , confirm: t('article.delete_confirm', name: article.title) ,method: :delete, class: "Button"
 
@@ -53,12 +54,16 @@
         - if show_fair_percent_for? resource
           h4.fair_percent
             = "#{t('article.show.fair_percent')} "
-            span.sprite_helper title=t('article.preview.tooltips.fees_and_donations')
+            = render '/shared/tooltip',
+              text: t('article.preview.tooltips.fees_and_donations')
           =t('article.show.donate_html')
         - if show_friendly_percent_for? resource
           h4.fair_percent
             => t('article.show.friendly_percent')
-            span.sprite_helper title=t('article.preview.tooltips.friendly_percent', percent: resource.friendly_percent, ngo: resource.friendly_percent_organisation_nickname)
+            = render '/shared/tooltip',
+              text: t('article.preview.tooltips.friendly_percent',
+                percent: resource.friendly_percent,
+                ngo: resource.friendly_percent_organisation_nickname)
           = t('article.show.friendly_percent_html', percent: resource.friendly_percent , ngo: link_to(resource.friendly_percent_organisation_nickname, resource.friendly_percent_organisation))
         .tags
           = render 'articles/show/commendation_labels', article: resource

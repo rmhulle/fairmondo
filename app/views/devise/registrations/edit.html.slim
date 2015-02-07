@@ -30,7 +30,8 @@ h1= t('common.actions.edit_profile')
       .Accordion-step
         .visibility
           = t('users.visibility.public')
-          span.sprite_helper title="Für Dich und andere Nutzer*innen sichtbar."
+          = render '/shared/tooltip',
+            text: 'Für Dich und andere Nutzer*innen sichtbar.'
         h4
           = "#{ t('formtastic.labels.user.legal_entity') }:"
         p
@@ -51,7 +52,7 @@ h1= t('common.actions.edit_profile')
       .Accordion-step
         .visibility
           = t('users.visibility.private')
-          span.sprite_helper title="Nur für Dich sichtbar."
+          = render '/shared/tooltip', text: 'Nur für Dich sichtbar.'
         h4= t('formtastic.labels.user.customer_number') + ":"
         p
           = current_user.customer_nr
@@ -156,7 +157,7 @@ h1= t('common.actions.edit_profile')
         .Accordion-step
           h3.unified_transport_title
             = t('users.title.unified_transport')
-            span.sprite_helper title=t('users.hints.unified_transport')
+            = render '/shared/tooltip', text: t('users.hints.unified_transport')
 
           = f.input :unified_transport_provider, :input_html => { :placeholder => t('article.transport.placeholders.type2_provider') }
           = f.input :unified_transport_price
@@ -166,7 +167,7 @@ h1= t('common.actions.edit_profile')
         .Accordion-step.free_transport_step
           h3.free_transport_title
             = t('users.title.free_at_transport')
-            span.sprite_helper title=t('users.hints.free_at_transport')
+            = render '/shared/tooltip', text: t('users.hints.free_at_transport')
           = f.input :free_transport_available, wrapper_html: {class: "free_transport_available"}
           = f.input :free_transport_at_price, wrapper_html: {class: "free_transport_at_price_cents"}
 

@@ -269,7 +269,9 @@
 			//
             // Der Info/Settings-Bereich wird eingebunden
             //
-            context.append('<li><span class="sprite_helper" title="' + options.txt_info + '"></span></li>');
+            context.append('<li><i class="Tooltip fa fa-question-circle" title="'
+                + options.txt_info
+                + '"></span></li>');
 
             //
             // Spezielles Event erstellen und triggern, für Tooltip-Funktion

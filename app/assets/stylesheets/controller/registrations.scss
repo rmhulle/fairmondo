@@ -102,9 +102,9 @@ ul.checklist {
   position: relative;
   margin-right: 2em;
   float:right;
-  > span.sprite_helper {
+  > .Tooltip {
     top: 0;
-    right: -2em;
+    right: -1em;
   }
 }
 

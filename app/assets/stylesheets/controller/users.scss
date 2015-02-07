@@ -1,5 +1,9 @@
 @import "mixins/all";
 
+#my_article_templates .Tooltip {
+  font-size: 1.5rem;
+}
+
 .user-header {
   @include clearfix;
   margin-bottom:2em;

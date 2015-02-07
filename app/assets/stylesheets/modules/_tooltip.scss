@@ -1,0 +1,8 @@
+.Tooltip {
+  cursor: pointer;
+  color: $light-gray;
+
+  &:hover {
+    color: $black;
+  }
+}

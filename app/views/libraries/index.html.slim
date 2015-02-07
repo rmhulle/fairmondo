@@ -23,7 +23,7 @@
 / Title
 h1.Title-next-to-tab
   => t('libraries.title')
-  span.sprite_helper title="#{ t('libraries.tooltip') }"
+  = render '/shared/tooltip', text: t('libraries.tooltip')
 
 / Tabs
 - if !user_focused? || @user == current_user
