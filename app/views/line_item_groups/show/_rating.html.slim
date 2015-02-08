@@ -3,7 +3,13 @@
     - rating = line_item_group.rating
     .Rating
       .Rating-image
-        span*{class: "sprite_#{rating.value}" }
+        - case rating.value
+        - when 'positive'
+          = fa_icon 'smile-o 3x', title: 'positiv'
+        - when 'neutral'
+          = fa_icon 'meh-o 3x', title: 'neutral'
+        - when 'negative'
+          = fa_icon 'frown-o 3x', title: 'negativ'
       .Rating-quote
         - if rating.text.empty?
           p

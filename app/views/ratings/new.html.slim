@@ -31,7 +31,10 @@
       = f.inputs do
         = f.input :line_item_group_id, as: :hidden
         = f.semantic_errors :line_item_group_id
-        = f.input :rating, as: :plain_radio, wrapper_html: { class: "rating-choice"}, label: false, collection: { content_tag(:span, class: "sprite_positive"){} => "positive", content_tag(:span, class: "sprite_neutral"){} => "neutral",  content_tag(:span, class: "sprite_negative"){} => "negative" }
+        = f.input :rating, as: :plain_radio,
+          wrapper_html: { class: "rating-choice"}, label: false,
+          collection: { 'positiv' => "positive",
+          'neutral' => "neutral", 'negativ' => "negative" }
       = f.inputs do
         = f.input :text, label: t('rating.create.comment'), input_html: { rows: 6 }
 

@@ -6,15 +6,10 @@
   @include whitebox;
 }
 
-.rating_form .rating-choice span{
-  vertical-align: middle;
-
-}
-
 // rating #index
 
 .ratings > .Rating {
-  margin-bottom:1em;
+  margin-bottom: 1em;
 }
 
 // layouts and responsiveness
@@ -36,10 +31,12 @@
 
 @include at-breakpoint($bp-mobile-horizontal) {
   .rating_form .rating-choice .choice {
-    display:inline;
-    margin-right:1em;
+    display: inline;
+    margin-right: 1em;
+    line-height: 170%;
+
+    .iradio {
+      top: 0;
+    }
   }
 }
-
-
-

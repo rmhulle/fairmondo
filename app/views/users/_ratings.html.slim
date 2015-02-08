@@ -20,17 +20,26 @@
 / along with Fairmondo.  If not, see <http://www.gnu.org/licenses/>.
 
 .User-rating
-  = link_to  user_ratings_path(user), data: { push: true } do
+  = link_to user_ratings_path(user), data: { push: true } do
     => t('rating.show.nr_of_ratings')
     = user.ratings.count
   .User-rating-images
     - if user.ratings.count > 0
       .User-rating-image
-        span.sprite_positive_small
-        =< number_with_precision( user.percentage_of_positive_ratings, :precision => 1 ).to_s+"%"
+        = fa_icon 'smile-o lg', title: 'positiv'
+        /= fa_icon 'thumbs-up lg'
+        =< number_with_precision( user.percentage_of_positive_ratings,
+          precision: 1 ).to_s
+        | &thinsp;%
       .User-rating-image
-        span.sprite_neutral_small
-        =< number_with_precision( user.percentage_of_neutral_ratings, :precision => 1 ).to_s+"%"
+        = fa_icon 'meh-o lg', title: 'neutral'
+        /= fa_icon 'thumbs-down lg rotate-270'
+        =< number_with_precision( user.percentage_of_neutral_ratings,
+          precision: 1 ).to_s
+        | &thinsp;%
       .User-rating-image
-        span.sprite_negative_small
-        =< number_with_precision( user.percentage_of_negative_ratings, :precision => 1 ).to_s+"%"
+        = fa_icon 'frown-o lg', title: 'negativ'
+        /= fa_icon 'thumbs-down lg'
+        =< number_with_precision( user.percentage_of_negative_ratings,
+          precision: 1 ).to_s
+        | &thinsp;%
