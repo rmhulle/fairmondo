@@ -27,9 +27,16 @@ module Article::Validations
     validates :condition_extra, presence: true, if: :old?
 
     #money_rails and price
-    validates :price_cents, presence: true, numericality: {
+    validates :price_cents, numericality: {
       greater_than_or_equal_to: 0, less_than_or_equal_to: 1000000
-    }
+    }, presence: true
+    validate :price_must_not_be_nil
+
+    def price_must_not_be_nil
+      self.errors.add :price, 'aslkdfjas' if self.price_cents.nil?
+      self.errors.add :price, 'aslkdfjas' if self.price_cents <= 0
+      self.errors.add :price, 'aslkdfjas' if self.price_cents >= 1000000
+    end
 
     validates :vat , presence: true , inclusion: { in: [0, 7 ,19] },
               if: :belongs_to_legal_entity?

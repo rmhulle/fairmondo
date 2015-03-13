@@ -59,7 +59,10 @@ module Article::ExtendedAttributes
 
     # Monetize
 
-    monetize :price_cents
+    monetize :price_cents, allow_nil: true, :numericality => {
+    :greater_than_or_equal_to => 0,
+    :less_than_or_equal_to => 10000
+  }
     monetize :basic_price_cents
     monetize :transport_type2_price_cents, numericality: {
       greater_than_or_equal_to: 0, less_than_or_equal_to: 50000
