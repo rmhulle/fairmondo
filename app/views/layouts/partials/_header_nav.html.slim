@@ -91,6 +91,10 @@ nav.l-header-nav
 
     / Profile & Logout
     - if user_signed_in?
+      li.user-nav
+        = link_to user_path(current_user), data: navigation_push do
+          = image_tag(current_user.image_url(:profile))
+          =< current_user.name
       li
         = link_to t('header.profile'),
           user_path(current_user),

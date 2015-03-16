@@ -166,6 +166,13 @@ $header-nav-link-color-hover: $blue;
 }
 
 
+.user-nav img {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $light-gray;
+}
+
+
 .l-header-nav-dropdown {
   @include color-links($black, $header-nav-link-color-hover);
   position: absolute;
