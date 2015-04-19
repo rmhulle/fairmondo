@@ -31,6 +31,8 @@ class WelcomeController < ApplicationController
     # @old = query_object.set(:old).find(2)
     @donation_articles = query_object.set(:donation_articles).find(2)
 
+    @last_bought_articles = Article.by_date_of_purchase.limit(2)
+
     # Libraries
     @trending_libraries = Library.trending_welcome_page.includes(user: [:image], comments: { user: [:image] })
 

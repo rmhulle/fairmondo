@@ -280,7 +280,8 @@
     h2
       = link_to( t('welcome.donation_articles.heading'),
         featured_library_path(@donation_articles[:library]))
-    - @donation_articles[:exhibits].each do |article|
+    /- @donation_articles[:exhibits].each do |article|
+     - @last_bought_articles.each do |article|
       .teaser-queue
         = render 'articles/shared/show_article', article: article
 

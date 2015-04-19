@@ -22,7 +22,6 @@ module Article::Scopes
         articles.friendly_percent_organisation_id,
         articles.transport_bike_courier')
     }
-
     scope :belboon_trackable, -> {
       where('state = ? AND
             condition = ? AND
@@ -30,6 +29,13 @@ module Article::Scopes
             ecologic = ? AND
             small_and_precious = ?',
             'active', 'new', false, false, false)
+    }
+    scope :by_date_of_purchase, -> {
+        reduced
+        .joins(:business_transactions)
+        .where(articles: { state: 'sold' })
+        .reorder('business_transactions.sold_at DESC')
+        .select('business_transactions.sold_at')
     }
   end
 end
